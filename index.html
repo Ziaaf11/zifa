@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalku Sederhana</title>
+</head>
+<body>
+  <input type="text" id="angka1" placeholder="Masukkan angka pertama">
+  <input type="text" id="angka2" placeholder="Masukkan angka kedua">
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <button onclick="hitung()">Hitung</button>
+  <p id="hasil"></p>
+
+  <script>
+    function hitung() {
+      let angka1 = parseFloat(document.getElementById('angka1').value);
+      let angka2 = parseFloat(document.getElementById('angka2').value);
+      let operator = document.getElementById('operator').value;
+      let hasil;
+
+      switch (operator) {
+        case '+':
+          hasil = angka1 + angka2;
+          break;
+        case '-':
+          hasil = angka1 - angka2;
+          break;
+        case '*':
+          hasil = angka1 * angka2;
+          break;
+        case '/':
+          hasil = angka1 / angka2;
+          break;
+      }
+
+      document.getElementById('hasil').textContent = "Hasil: " + hasil;
+    }
+  </script>
+</body>
+</html>
